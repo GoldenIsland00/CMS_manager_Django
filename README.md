@@ -4,7 +4,6 @@ A professional, bilingual (Persian/English) product catalog and content manageme
 
 [![Python Version](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://python.org)
 [![Django Version](https://img.shields.io/badge/django-4.x-green.svg)](https://djangoproject.com)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 ---
 
