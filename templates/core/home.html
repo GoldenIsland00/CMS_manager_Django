@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+<section class="hero">
+  <div class="container hero-inner">
+    <h1>{% if LANGUAGE_CODE == 'fa' %}{{ store_settings.store_name_fa }}{% else %}{{ store_settings.store_name_en }}{% endif %}</h1>
+    <p>{% if LANGUAGE_CODE == 'fa' %}{{ store_settings.slogan_fa }}{% else %}{{ store_settings.slogan_en }}{% endif %}</p>
+    <a href="{% url 'products:category_list' %}" class="btn btn-lg">{% trans "Browse products" %}</a>
+  </div>
+</section>
+
+<section class="container section">
+  <div class="section-head">
+    <h2>{% trans "Categories" %}</h2>
+    <a href="{% url 'products:category_list' %}" class="link-more">{% trans "See all" %} &rsaquo;</a>
+  </div>
+  <div class="category-grid">
+    {% for cat in categories %}
+      <a href="{{ cat.get_absolute_url }}" class="category-card">
+        {% if cat.image %}
+          <img src="{{ cat.image.url }}" alt="{{ cat.name }}">
+        {% else %}
+          <div class="no-image">{{ cat.name|slice:":1" }}</div>
+        {% endif %}
+        <span>{{ cat.name }}</span>
+      </a>
+    {% empty %}
+      <p class="empty-state">{% trans "No categories yet — add some from the admin panel." %}</p>
+    {% endfor %}
+  </div>
+</section>
+
+{% if featured_products %}
+<section class="container section">
+  <div class="section-head">
+    <h2>{% trans "Featured products" %}</h2>
+  </div>
+  <div class="product-grid">
+    {% for product in featured_products %}
+      {% include "products/_product_card.html" %}
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<section class="container section">
+  <div class="section-head">
+    <h2>{% trans "Newest products" %}</h2>
+  </div>
+  <div class="product-grid">
+    {% for product in latest_products %}
+      {% include "products/_product_card.html" %}
+    {% empty %}
+      <p class="empty-state">{% trans "No products yet — add some from the admin panel." %}</p>
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock %}
