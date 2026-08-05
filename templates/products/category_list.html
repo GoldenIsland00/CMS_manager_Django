@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% if active_category %}{{ active_category.name }}{% elif search_query %}{% trans "Search" %}: {{ search_query }}{% else %}{% trans "All categories" %}{% endif %}{% endblock %}
+
+{% block content %}
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="{% url 'core:home' %}">{% trans "Home" %}</a>
+    <span>/</span>
+    {% if active_category %}
+      <a href="{% url 'products:category_list' %}">{% trans "Categories" %}</a>
+      <span>/</span>
+      <span>{{ active_category.name }}</span>
+    {% elif search_query %}
+      <span>{% trans "Search results" %}</span>
+    {% else %}
+      <span>{% trans "All categories" %}</span>
+    {% endif %}
+  </nav>
+
+  <div class="catalog-layout">
+    <aside class="catalog-sidebar">
+      <h3>{% trans "Categories" %}</h3>
+      <ul class="sidebar-category-list">
+        <li>
+          <a href="{% url 'products:category_list' %}" class="{% if not active_category %}active{% endif %}">
+            {% trans "All products" %}
+          </a>
+        </li>
+        {% for cat in categories %}
+          <li>
+            <a href="{{ cat.get_absolute_url }}" class="{% if active_category.pk == cat.pk %}active{% endif %}">
+              {{ cat.name }} <span class="count">({{ cat.product_count }})</span>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </aside>
+
+    <div class="catalog-main">
+      <div class="catalog-toolbar">
+        <h1 class="catalog-title">
+          {% if active_category %}{{ active_category.name }}
+          {% elif search_query %}{% trans "Results for" %} "{{ search_query }}"
+          {% else %}{% trans "All products" %}{% endif %}
+        </h1>
+        {% if page_obj %}
+        <form method="get" class="sort-form">
+          {% if search_query %}<input type="hidden" name="q" value="{{ search_query }}">{% endif %}
+          <label for="sort">{% trans "Sort by" %}:</label>
+          <select name="sort" id="sort" onchange="this.form.submit()">
+            <option value="newest" {% if sort == "newest" or not sort %}selected{% endif %}>{% trans "Newest" %}</option>
+            <option value="price_asc" {% if sort == "price_asc" %}selected{% endif %}>{% trans "Price: low to high" %}</option>
+            <option value="price_desc" {% if sort == "price_desc" %}selected{% endif %}>{% trans "Price: high to low" %}</option>
+          </select>
+        </form>
+        {% endif %}
+      </div>
+
+      {% if active_category and active_category.description %}
+        <p class="category-description">{{ active_category.description }}</p>
+      {% endif %}
+
+      <div class="product-grid">
+        {% for product in products %}
+          {% include "products/_product_card.html" %}
+        {% empty %}
+          <p class="empty-state">{% trans "No products found." %}</p>
+        {% endfor %}
+      </div>
+
+      {% if page_obj.paginator.num_pages > 1 %}
+        <nav class="pagination">
+          {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}{% if sort %}&sort={{ sort }}{% endif %}{% if search_query %}&q={{ search_query }}{% endif %}">&laquo; {% trans "Prev" %}</a>
+          {% endif %}
+          <span class="current">{{ page_obj.number }} / {{ page_obj.paginator.num_pages }}</span>
+          {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}{% if sort %}&sort={{ sort }}{% endif %}{% if search_query %}&q={{ search_query }}{% endif %}">{% trans "Next" %} &raquo;</a>
+          {% endif %}
+        </nav>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

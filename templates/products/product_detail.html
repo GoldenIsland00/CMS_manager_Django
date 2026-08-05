@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% load i18n humanize %}
+
+{% block title %}{{ product.name }}{% endblock %}
+{% block meta_description %}{{ product.short_description }}{% endblock %}
+
+{% block content %}
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="{% url 'core:home' %}">{% trans "Home" %}</a>
+    <span>/</span>
+    <a href="{{ product.category.get_absolute_url }}">{{ product.category.name }}</a>
+    <span>/</span>
+    <span>{{ product.name }}</span>
+  </nav>
+
+  <div class="product-detail">
+    <div class="product-gallery">
+      <div class="gallery-main">
+        {% with main_img=product.main_image %}
+          <img id="mainImage" src="{% if main_img %}{{ main_img.image.url }}{% endif %}" alt="{{ product.name }}">
+        {% endwith %}
+        {% if product.has_discount %}
+          <span class="badge badge-discount badge-lg">-{{ product.discount_percent }}%</span>
+        {% endif %}
+      </div>
+      {% if product.images.count > 1 %}
+        <div class="gallery-thumbs">
+          {% for img in product.images.all %}
+            <button type="button" class="thumb-btn {% if forloop.first %}active{% endif %}" data-full="{{ img.image.url }}">
+              <img src="{{ img.image.url }}" alt="{{ img.alt_text|default:product.name }}">
+            </button>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="product-info">
+      <p class="product-category-tag">{{ product.category.name }}</p>
+      <h1 class="product-title">{{ product.name }}</h1>
+      {% if product.sku %}<p class="product-sku">{% trans "Code" %}: {{ product.sku }}</p>{% endif %}
+
+      {% if product.short_description %}
+        <p class="product-short-desc">{{ product.short_description }}</p>
+      {% endif %}
+
+      <div class="product-price-box">
+        {% if product.has_discount %}
+          <span class="price-old">{{ product.price|intcomma }}</span>
+          <span class="price-new-lg">{{ product.final_price|intcomma }}</span>
+        {% else %}
+          <span class="price-new-lg">{{ product.final_price|intcomma }}</span>
+        {% endif %}
+        <span class="price-unit">{% trans "Toman" %}</span>
+      </div>
+
+      <p class="stock-status {% if product.in_stock %}in-stock{% else %}out-stock{% endif %}">
+        {% if product.in_stock %}
+          &#10003; {% trans "In stock" %}
+        {% else %}
+          &#10007; {% trans "Out of stock" %}
+        {% endif %}
+      </p>
+
+      {% if store_settings.phone %}
+        <a href="tel:{{ store_settings.phone }}" class="btn btn-lg btn-block">{% trans "Call to order" %}: {{ store_settings.phone }}</a>
+      {% endif %}
+      {% if store_settings.whatsapp %}
+        <a href="{{ store_settings.whatsapp }}" target="_blank" rel="noopener" class="btn btn-outline btn-block">{% trans "Order via WhatsApp" %}</a>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="product-tabs">
+    {% if product.description %}
+      <section class="tab-block">
+        <h2>{% trans "Description" %}</h2>
+        <div class="tab-content">{{ product.description|linebreaks }}</div>
+      </section>
+    {% endif %}
+
+    {% if product.specifications.all %}
+      <section class="tab-block">
+        <h2>{% trans "Specifications" %}</h2>
+        <table class="spec-table">
+          <tbody>
+            {% for spec in product.specifications.all %}
+              <tr>
+                <th>{{ spec.title }}</th>
+                <td>{{ spec.value }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </section>
+    {% endif %}
+  </div>
+
+  {% if related_products %}
+    <section class="section">
+      <div class="section-head">
+        <h2>{% trans "Related products" %}</h2>
+      </div>
+      <div class="product-grid">
+        {% for product in related_products %}
+          {% include "products/_product_card.html" %}
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+</div>
+{% endblock %}
