@@ -1,0 +1,338 @@
+# Persian (fa) translation for shop_cms
+msgid ""
+msgstr ""
+"Project-Id-Version: shop_cms 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-05 10:53+0330\n"
+"PO-Revision-Date: 2026-08-05 10:53+0330\n"
+"Last-Translator: \n"
+"Language-Team: Persian\n"
+"Language: fa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Store identity"
+msgstr "هویت فروشگاه"
+
+msgid "Contact"
+msgstr "اطلاعات تماس"
+
+msgid "QR code"
+msgstr "کد QR"
+
+msgid "The QR code is generated automatically from the Store URL above whenever you save."
+msgstr "کد QR به‌صورت خودکار از روی آدرس فروشگاه بالا و در زمان ذخیره ساخته می‌شود."
+
+msgid "QR code will appear here after you save."
+msgstr "کد QR پس از ذخیره در همین‌جا نمایش داده می‌شود."
+
+msgid "Current QR code"
+msgstr "کد QR فعلی"
+
+msgid "Core / Store settings"
+msgstr "تنظیمات اصلی فروشگاه"
+
+msgid "Store name (Persian)"
+msgstr "نام فروشگاه (فارسی)"
+
+msgid "Store name (English)"
+msgstr "نام فروشگاه (انگلیسی)"
+
+msgid "Slogan (Persian)"
+msgstr "شعار (فارسی)"
+
+msgid "Slogan (English)"
+msgstr "شعار (انگلیسی)"
+
+msgid "Logo"
+msgstr "لوگو"
+
+msgid "Store URL"
+msgstr "آدرس فروشگاه"
+
+msgid "Public URL of the store - this is what the QR code will point to."
+msgstr "آدرس عمومی فروشگاه - کد QR به همین آدرس اشاره خواهد کرد."
+
+msgid "Phone number"
+msgstr "شماره تماس"
+
+msgid "Address (Persian)"
+msgstr "آدرس (فارسی)"
+
+msgid "Address (English)"
+msgstr "آدرس (انگلیسی)"
+
+msgid "Instagram URL"
+msgstr "آدرس اینستاگرام"
+
+msgid "Telegram URL"
+msgstr "آدرس تلگرام"
+
+msgid "WhatsApp URL"
+msgstr "آدرس واتس‌اپ"
+
+msgid "QR code (auto-generated)"
+msgstr "کد QR (خودکار)"
+
+msgid "Store settings"
+msgstr "تنظیمات فروشگاه"
+
+msgid "Upload images"
+msgstr "آپلود تصاویر"
+
+msgid "Select several photos at once (Ctrl/Cmd + click). The first one becomes the main image if the product has none yet."
+msgstr "چند عکس را هم‌زمان انتخاب کنید (نگه‌داشتن Ctrl/Cmd هنگام کلیک). اگر محصول عکسی نداشته باشد، عکس اول به‌عنوان عکس اصلی تنظیم می‌شود."
+
+msgid "Preview"
+msgstr "پیش‌نمایش"
+
+msgid "Category"
+msgstr "دسته‌بندی"
+
+msgid "Names & slug"
+msgstr "نام‌ها و اسلاگ"
+
+msgid "Short description"
+msgstr "توضیح کوتاه"
+
+msgid "Full description"
+msgstr "توضیح کامل"
+
+msgid "Pricing & stock"
+msgstr "قیمت و موجودی"
+
+msgid "Visibility"
+msgstr "وضعیت نمایش"
+
+msgid "Photos"
+msgstr "تصاویر"
+
+msgid "Photo"
+msgstr "تصویر"
+
+msgid "Products catalog"
+msgstr "کاتالوگ محصولات"
+
+msgid "Name (Persian)"
+msgstr "نام (فارسی)"
+
+msgid "Name (English)"
+msgstr "نام (انگلیسی)"
+
+msgid "Slug"
+msgstr "اسلاگ"
+
+msgid "Description (Persian)"
+msgstr "توضیحات (فارسی)"
+
+msgid "Description (English)"
+msgstr "توضیحات (انگلیسی)"
+
+msgid "Image"
+msgstr "تصویر"
+
+msgid "Parent category"
+msgstr "دسته‌بندی والد"
+
+msgid "Display order"
+msgstr "ترتیب نمایش"
+
+msgid "Active"
+msgstr "فعال"
+
+msgid "Categories"
+msgstr "دسته‌بندی‌ها"
+
+msgid "SKU / product code"
+msgstr "کد محصول (SKU)"
+
+msgid "Short description (Persian)"
+msgstr "توضیح کوتاه (فارسی)"
+
+msgid "Short description (English)"
+msgstr "توضیح کوتاه (انگلیسی)"
+
+msgid "Full description (Persian)"
+msgstr "توضیح کامل (فارسی)"
+
+msgid "Full description (English)"
+msgstr "توضیح کامل (انگلیسی)"
+
+msgid "Price"
+msgstr "قیمت"
+
+msgid "Price in Toman"
+msgstr "قیمت به تومان"
+
+msgid "Discount price"
+msgstr "قیمت با تخفیف"
+
+msgid "Leave empty if the product has no discount."
+msgstr "اگر محصول تخفیف ندارد، این فیلد را خالی بگذارید."
+
+msgid "Stock quantity"
+msgstr "موجودی انبار"
+
+msgid "Active / visible on site"
+msgstr "فعال / نمایش در سایت"
+
+msgid "Featured"
+msgstr "ویژه"
+
+msgid "Product"
+msgstr "محصول"
+
+msgid "Products"
+msgstr "محصولات"
+
+msgid "Alt text"
+msgstr "متن جایگزین تصویر"
+
+msgid "Main image"
+msgstr "تصویر اصلی"
+
+msgid "Product image"
+msgstr "تصویر محصول"
+
+msgid "Product images"
+msgstr "تصاویر محصول"
+
+msgid "Title (Persian)"
+msgstr "عنوان (فارسی)"
+
+msgid "Title (English)"
+msgstr "عنوان (انگلیسی)"
+
+msgid "Value (Persian)"
+msgstr "مقدار (فارسی)"
+
+msgid "Value (English)"
+msgstr "مقدار (انگلیسی)"
+
+msgid "Specification"
+msgstr "مشخصه فنی"
+
+msgid "Specifications"
+msgstr "مشخصات فنی"
+
+msgid "Search products…"
+msgstr "جستجوی محصولات…"
+
+msgid "Search products"
+msgstr "جستجوی محصولات"
+
+msgid "Search"
+msgstr "جستجو"
+
+msgid "Language"
+msgstr "زبان"
+
+msgid "Toggle dark / light theme"
+msgstr "تغییر حالت روشن / تاریک"
+
+msgid "Admin panel"
+msgstr "پنل مدیریت"
+
+msgid "Home"
+msgstr "خانه"
+
+msgid "All categories"
+msgstr "همه دسته‌بندی‌ها"
+
+msgid "Phone"
+msgstr "تلفن"
+
+msgid "Links"
+msgstr "لینک‌ها"
+
+msgid "Visit our store"
+msgstr "بازدید از فروشگاه ما"
+
+msgid "Store QR code"
+msgstr "کد QR فروشگاه"
+
+msgid "Scan to open the store on your phone"
+msgstr "برای باز کردن فروشگاه در موبایل، اسکن کنید"
+
+msgid "All rights reserved."
+msgstr "تمامی حقوق محفوظ است."
+
+msgid "Browse products"
+msgstr "مشاهده محصولات"
+
+msgid "See all"
+msgstr "مشاهده همه"
+
+msgid "No categories yet — add some from the admin panel."
+msgstr "هنوز دسته‌بندی‌ای ثبت نشده — از پنل مدیریت اضافه کنید."
+
+msgid "Featured products"
+msgstr "محصولات ویژه"
+
+msgid "Newest products"
+msgstr "جدیدترین محصولات"
+
+msgid "No products yet — add some from the admin panel."
+msgstr "هنوز محصولی ثبت نشده — از پنل مدیریت اضافه کنید."
+
+msgid "No image"
+msgstr "بدون تصویر"
+
+msgid "Out of stock"
+msgstr "ناموجود"
+
+msgid "Toman"
+msgstr "تومان"
+
+msgid "View"
+msgstr "مشاهده"
+
+msgid "Search results"
+msgstr "نتایج جستجو"
+
+msgid "All products"
+msgstr "همه محصولات"
+
+msgid "Results for"
+msgstr "نتایج برای"
+
+msgid "Sort by"
+msgstr "مرتب‌سازی بر اساس"
+
+msgid "Newest"
+msgstr "جدیدترین"
+
+msgid "Price: low to high"
+msgstr "قیمت: ارزان به گران"
+
+msgid "Price: high to low"
+msgstr "قیمت: گران به ارزان"
+
+msgid "No products found."
+msgstr "محصولی یافت نشد."
+
+msgid "Prev"
+msgstr "قبلی"
+
+msgid "Next"
+msgstr "بعدی"
+
+msgid "Code"
+msgstr "کد کالا"
+
+msgid "In stock"
+msgstr "موجود"
+
+msgid "Call to order"
+msgstr "تماس برای سفارش"
+
+msgid "Order via WhatsApp"
+msgstr "سفارش از طریق واتس‌اپ"
+
+msgid "Description"
+msgstr "توضیحات"
+
+msgid "Related products"
+msgstr "محصولات مرتبط"
